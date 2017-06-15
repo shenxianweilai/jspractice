@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历打印一个元素的所有属性</title>
+	<script>
+	    function getDomValue(){
+	    	var myLink = document.getElementById('myLink');
+	    	var str = '';
+	    	for(var prop in myLink) {
+	    		str += prop + ':' + myLink[prop] +"<br/>";
+	    	}
+
+	    	document.getElementById("valuesP").innerHTML = str;
+
+	    }
+	</script>
+</head>
+<body style="text-align: center;">
+     <p>
+     	<a id="myLink" href="#">链接</a>
+     	<br>
+     	<input type="button" value="获取链接DOM属性" onclick="getDomValue();">
+     </p>
+     <p id="valuesP" style="text-align: left;"></p>
+</body>
+</html>

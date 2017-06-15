@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>让页面前进和后退</title>
+	<script>
+		//前进
+		function goForward(){
+			window.history.forward();
+		}
+		//后退
+		function goBack(){
+			window.history.back();
+		}
+	</script>
+</head>
+<body style="text-align: center;">
+	<p>
+		<input type="button" value="前进" onclick="goForward()">
+		<input type="button" value="后退" onclick="goBack()">
+	</p>
+</body>
+</html>

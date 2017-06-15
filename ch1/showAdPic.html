@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>窗口打开时定时显示大广告图片及其自动关闭</title>
+	<script>
+		//展示广告图片
+		function showAdPic(){
+			var ad = document.getElementById('ad');
+			ad.innerHTML = '<img src="./ad.jpg" width="720" height="480"/>';
+			setTimeout(function(){
+				var ad =document.getElementById('ad');
+				ad.style.display = 'none';
+			}, 5000);
+		}
+		window.onload = showAdPic;
+	</script>
+</head>
+<body style="text-align: center;">
+  <p>网页上部内容</p>
+  <p id="ad"></p>
+  <p>网页下部内容</p>
+</body>
+</html>

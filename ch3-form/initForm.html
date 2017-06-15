@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>为表单的聚焦控件设置醒目的样式</title>
+	<script>
+		function init() {
+			var f = document.forms[0];
+			var elements = f.elements;
+			var str = " ";
+			for(var i=0;i<elements.length;i++){
+				var e = elements[i];
+				e.onfocus = function () {
+					this.style.border = '1px solid lightblue';
+				}
+				e.onblur = function() {
+					this.style.border ='';
+				}
+			}
+		}
+	</script>
+</head>
+<body style="text-align: center;" onload="init();">
+	<form action="" method="post">
+		<input type="text" name="myText">
+		<br>
+		<input type="checkbox" name="myname">全选 &nbsp;&nbsp;
+		<input type="checkbox" name="myname">全选 &nbsp;&nbsp;
+		<input type="checkbox" name="myname">全选
+		<br>
+		<select name="myMethod" id="">
+			<option value="">==请选择==</option>
+			<option value="get">get</option>
+			<option value="post">post</option>
+		</select>
+		<br>
+		<input type="checkbox" name="myall" onclick="checkAll(this.checked)">全选
+	</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动刷新页面</title>
+	<script>
+		function fresh(){
+			window.location.reload();
+		}
+		setTimeout('fresh()', 5000);
+	</script>
+</head>
+<body>
+	<p>自动刷新中...</p>
+	<p>在meta也可以使用refresh，content=“20”</p>
+</body>
+</html>

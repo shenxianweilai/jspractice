@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历文档树</title>
+	<script>
+		function getDomTree(){
+			alert(text(document.body));
+		}
+		function text(elem){
+			var t = "";
+			var elemelem = elem.childNodes;
+			for(var i=0; i<elemelem.length;i++){
+				//当前节点
+				var e = elemelem[i];
+				if(e.parentNode ==elem && e.nodeType ==1) {
+					t += e.tagName + ' ';
+					//循环子节点
+					if(e.childNodes.length > 0) {
+						if (e.childNodes.length == 1) {
+							var fe = e.childNodes[0];
+							if (fe.nodeType == 3) 
+								continue;
+						}
+						t +='\n\t';//子节点分隔符
+						t +=text(e);//递归其他元素的子节点
+					}
+				}
+			}
+			return t;
+		}
+	</script>
+</head>
+<body style="text-align: center;">
+	<p>
+		<a href="#" id="myLink">链接</a>
+		<br>
+		<input type="button" value="遍历文档树" onclick="getDomTree()">
+	</p>
+</body>
+</html>

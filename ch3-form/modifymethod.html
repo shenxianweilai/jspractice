@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改表单提交的方法</title>
+	<script>
+		function modifyMethod() {
+			var f = document.forms[0];
+			var method = f.myMethod.value;
+			f.method = method;
+			alert("表单当前的提交方法"+ ' : ' + method) ;
+		}
+	</script>
+</head>
+<body style="text-align: center;">
+	<form action="" method="post">
+		<input type="text" name="myText">
+		<br>
+		<input type="radio" name="myRadio" value="1">
+		<br>
+		<select name="myMethod" id="">
+			<option value="">==请选择==</option>
+			<option value="get">get</option>
+			<option value="post">post</option>
+		</select>
+		<br>
+		<input type="button" value="修改提交方法" onclick="modifyMethod()">	
+	</form>
+</body>
+</html>

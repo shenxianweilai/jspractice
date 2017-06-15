@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历表单所有的控件</title>
+	<script>
+		function getValues() {
+			var f = document.forms[0];
+			var elements = f.elements;
+			var str = '';
+			for(var i=0; i<elements.length; i++){
+				var e = elements[i];
+				str +=  e.value;
+				str += '\n';
+			}
+			alert(str);
+			
+		}
+	</script>
+</head>
+<body style="text-align: center;">
+	<form action="">
+		<input type="text" name="myText">
+		<br>
+		<input type="radio" name="myRadio" value="1">
+		<br>
+		<select name="mySelect" id="">
+			<option value="">==请选择==</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+		</select>
+		<br>
+		<input type="button" value="得到所有控件的值" onclick="getValues()">	
+	</form>
+</body>
+</html>

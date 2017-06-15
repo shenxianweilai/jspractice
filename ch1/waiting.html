@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面载入等待界面</title>
+	<script>
+		//提交表单
+		function submitForm() {
+			var doing = document.getElementById('doing');
+			doing.style.display = '';
+			self.location.reload();
+		}
+	</script>
+</head>
+<body style="text-align: center;">
+    <div id="doing" style="z-index: 99; left: 0px; top: 0px; display: none; width: 100%; position: absolute; height: 100%; background: orange;">
+    	<br><br><br>载入中请等待...
+    </div>
+	<p>
+		<input type="button" value="提交表单" onclick="submitForm()">
+	</p>
+</body>
+</html>

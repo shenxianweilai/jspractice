@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态指定表单的动作属性</title>
+	<script>
+		function modifyAction() {
+			var f = document.forms[0];
+			var newURL = f.newURL.value;
+			f.action = newURL;
+			alert("表单当前的动作"+ ' : ' + f.action) ;
+		}
+	</script>
+</head>
+<body style="text-align: center;">
+	<form action="" method="post">
+		<input type="text" name="newURL">
+		<br>
+		<input type="radio" name="myRadio" value="1">
+		<br>
+		<select name="myMethod" id="">
+			<option value="">==请选择==</option>
+			<option value="get">get</option>
+			<option value="post">post</option>
+		</select>
+		<br>
+		<input type="button" value="修改提交Action" onclick="modifyAction()">	
+	</form>
+</body>
+</html>

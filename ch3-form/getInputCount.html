@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取表单内文本框的个数</title>
+	<script>
+		function getInputCount() {
+			var f = document.forms[0];
+			var elements = f.elements;
+			var count = 0;
+			for (var i=0; i<elements.length; i++) {
+				var e = elements[i];
+				if (e.tagName == 'INPUT' && e.type =='text') {
+					count++
+				}
+			}
+			alert("文本框一共有：" + count + "个") ;
+		}
+	</script>
+</head>
+<body style="text-align: center;">
+	<form action="">
+		<input type="text" name="myText">
+		<br>
+		<input type="radio" name="myRadio" value="1">
+		<br>
+		<select name="mySelect" id="">
+			<option value="">==请选择==</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+		</select>
+		<br>
+		<input type="button" value="一共多少个文本框" onclick="getInputCount()">	
+	</form>
+</body>
+</html>
